@@ -7,6 +7,7 @@
 set -eu
 KIT="$(cd "$(dirname "$0")" && pwd)"; P="${1:?usage: apply.sh <project-dir>}"
 cp "$KIT/lib.js" "$P/src/core/lib.js"
+[ -f "$KIT/sil.js" ] && cp "$KIT/sil.js" "$P/src/sil.js"   # silhouette storytelling set (Kai silhouette, frozen street, device, clocks)
 python3 - "$P/src/core/kit.js" "$KIT/kit-extras.js" <<'PY'
 import sys
 kp, ep = sys.argv[1:]; s = open(kp).read(); e = open(ep).read()

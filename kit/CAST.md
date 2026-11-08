@@ -32,3 +32,6 @@ Code: `kit/kit-extras.js` (added to every project by `kit/apply.sh`). Debut: "Wh
 - Never copy another channel's characters or style closely (no Zack D. Films or Kurzgesagt lookalikes).
 - Kai is a cartoon re-enacting real facts: when he replays a real person's story, the narration names the real person and the sources back every detail.
 - Health topics: Kai shows the effect, never a how-to; end with the safety point when there is one.
+
+## Silhouette set (kit/sil.js, copied into src/ by apply.sh)
+Kai as a cinematic silhouette (`sil()` with his curl, `walk`/`run` poses, two-bone reach), the frozen street (`world(k)` + `rain`), `device`, `handDevice`, `clockFace`, `car`, `bird`, `glass`, `speech`, `waves`. Rule: ink = the living world, muted ivory-grey = frozen people, **gold = the one who still moves**. Debut: "What if you could pause time for ten seconds?" (2026-11-08).
