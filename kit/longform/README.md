@@ -12,10 +12,10 @@ script, not code. `FS` = the faceless-shorts skill folder, `REPO` = this repo's 
 4. `FS/scripts/py REPO/tools/align.py <project> --srt`: word timing and `data/captions.srt` (the separate subtitle file).
 5. In the project: `node tools/capture.mjs check` (CHECK OK) > `node tools/capture.mjs cues` > `FS/scripts/py tools/mix.py .` >
    `node tools/capture.mjs sheet review/all.jpg 4 6`: look at every frame, then full-size `frames` for anything suspect.
-6. Render in the background (about 1.1 s per second of video): `node tools/capture.mjs video renders/<name>.mp4`.
+6. Render in the background (about 1.4 s per second of video): `node tools/capture.mjs video renders/<name>.mp4`.
    Relay copy under 95 MB: `ffmpeg -i renders/<name>.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 160k -movflags +faststart renders/<name>-relay.mp4` (raise -crf by 2 until it fits).
 7. Thumbnail: pick a frame with one strong visual, then
-   `python3 REPO/tools/thumb.py <frame.jpg> "2-4 *WORDS*" renders/<name>-thumb.jpg --focus 0.5,0.45 --zoom 1.2` and look at it.
+   `python3 REPO/tools/thumb.py <frame.jpg> "2-4 *WORDS*" renders/<name>-thumb.jpg --focus 0.5,0.45 --zoom 1.2` and look at it. (needs Pillow; if missing: `pip install --break-system-packages pillow`).
 8. Chapters for the description: each `chapter` scene's line start from `data/lines.json` (first one `00:00`, at least 3, each 10 s or longer).
 
 ## Scene types
