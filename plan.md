@@ -11,6 +11,7 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 6. Wild what-ifs: hypothetical scenarios built on real science (geology, space, the body, history). Say it is hypothetical in the first line; every fact inside it is real and sourced.
 
 ## Backlog (Short unless marked LONG)
+- [ ] Follow-up idea (from the volcano Short): what actually happens inside a trash incinerator, hour by hour (850 C for two seconds, scrubbers, ash). Hook: "what actually happens when". Check numbers against EU 2010/75/EU.
 - [ ] What-if: what if there was a volcano under the Great Pyramid? (Giza geology, how volcanoes form, what an eruption would do). Hook: question. Deep Dive 3D.
 - [ ] What-if: what happens if you fall into the Mariana Trench? (pressure, light, temperature by depth). Hook: question. Deep Dive 3D.
 - [ ] What-if: what if the Moon disappeared tonight? (tides, nights, Earth's tilt). Hook: question.
@@ -31,5 +32,6 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 - [ ] Money math: what a small daily spend becomes in 10 years. Hook: number first.
 
 ## Done
+- [x] 2026-11-08 Wild what-if (viewer-style question): why we can't use a volcano as a dustbin (Inside Out + kit, 47 s): https://www.youtube.com/watch?v=IBIIBQScTqs
 - [x] 2026-11-08 Brain: he stayed awake 72 hours (first-commenter tribute, sleep series, Deep Dive 3D): https://www.youtube.com/watch?v=F3fQoS0m4rE
 - [x] 2026-11-08 Brain: why coffee makes some people tired (viewer reply): https://www.youtube.com/watch?v=7YwO_s4-Kxo

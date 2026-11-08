@@ -32,12 +32,15 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 Same brand, never the same video: rotate hook types and scene layouts, add one topic-specific visual each time, and give every video one original insight (a calculation, a comparison, an engineer's view). Never post near-duplicates.
 
 ## Status
+- 2026-11-08 (16:40 IST): 13th upload, the volcano-dustbin Short (pillar 6, Inside Out + kit, 47 s). Still 7 subscribers. Chrome extension not connected on mobile runs, so community posts and Instagram are owner tasks until it is.
 - 2026-11-08: 12 public uploads (10 Shorts since 2026-11-07, 2 long-form from 2026-08-27), 7 subscribers, about 2,300 views, about 0.2 public watch hours. All uploads are in analytics/videos.csv. Zapier analytics work (Data API counts in real time; the Analytics report lags 24-48 h). Claude in Chrome connected 2026-11-08, Studio steps not yet run. Instagram for Business not enabled in Zapier.
 - Owner decisions pending: the rabbit vlog is marked made for kids and is off-brand; three other uploads are off the pillars (magic trick, Kurukshetra, an untitled "7 November 2026" Short). Keep, unlist or leave is the owner's call.
 
 ## What the data says
 - 2026-11-08 (1-2 days of data, early): the "what happens if you stay awake" sleep series leads (24 h: 1,144 views; 48 h: 446), then Kurukshetra (322) and the coffee explainer (256). The one money Short got 5 views. The body/brain "what happens if" hook is the only proven format so far: keep it, and bridge it to the money, AI and productivity pillars instead of drifting off-niche. Judge a Short after 48-72 h, not hours.
 - 2026-11-08: the two August long-form videos hold 8% and 37% average viewed (about 12 minutes total watch time). Long-form needs a stronger hook in the first 30 s before it can build watch hours.
+
+- 2026-11-08: new volcano Short is the first on the wild what-if pillar; judge it after 48-72 h against the sleep series (24 h Short: 1,144 views). Long-form is due (last upload 2026-08-27): build next run, expanding the Short that retains best.
 
 ## Rules for using data
 - Rank Shorts by stayed-to-watch and average % viewed, long-form by CTR x average view duration, before raw views.
