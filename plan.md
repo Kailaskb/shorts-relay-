@@ -10,6 +10,9 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 5. Viewer replies: answer a real comment, agree-first when they have a point.
 
 ## Backlog (Short unless marked LONG)
+- [ ] Bridge (brain x money): what one short night does to your money decisions (sleep loss and risk-taking). Hook: "what happens if", the sleep series' winning format, aimed at the money pillar. Needs study sources.
+- [ ] Sleep series: the 11-day no-sleep record (Randy Gardner, 1964). Hook: number first. Viewer comment idea: "stayed awake 72 hrs playing Runescape" (48 h Short).
+- [ ] Bridge (brain x productivity): what 6 hours of sleep a night for 2 weeks does to your focus (Van Dongen et al., 2003). Hook: myth-bust. LONG candidate: "the sleep debt you can't feel".
 - [ ] Money math: how long until your money doubles (rule of 72). Hook: question. LONG candidate: sample in kit/longform/example-script.json.
 - [ ] AI and robots: why robots still can't fold laundry (Moravec's paradox). Hook: myth-bust. LONG candidate.
 - [ ] Money math: what 6% inflation does to savings in 12 years (the rule of 72 in reverse). Hook: number first.

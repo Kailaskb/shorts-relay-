@@ -1,3 +1,13 @@
 slug,date,format,youtube_id,pillar,style,length_s,hook_type,variable_tested,trigger,views,avg_pct_viewed,stayed_to_watch_pct,avg_view_duration_s,ctr_pct,likes,comments,subs_gained,notes
-why-coffee-makes-some-people-tired,2026-11-08,short,7YwO_s4-Kxo,brain-productivity,inside-out,44,agree-with-commenter,first-post,viewer-comment,,,,,,,,,first reply Short; captions used spread timing (about 0.2 s late)
-he-stayed-awake-72-hours,2026-11-08,short,F3fQoS0m4rE,brain-productivity,deep-dive,45,first-commenter-tribute,style (deep-dive instead of inside-out),viewer-comment,,,,,,,,,first-commenter tribute; continues the 24h/48h sleep series; name only no handle
+he-stayed-awake-72-hours,2026-11-08,short,F3fQoS0m4rE,brain-productivity,deep-dive,46,first-commenter-tribute,style (deep-dive instead of inside-out),viewer-comment,0,,,,,1,0,,sleep series part 3; first-commenter tribute; views as of 2026-11-08 10:15 UTC (1 h old)
+why-coffee-makes-some-people-tired,2026-11-08,short,7YwO_s4-Kxo,brain-productivity,inside-out,45,agree-with-commenter,first-post,viewer-comment,95,,,,,1,0,,reply Short; captions used spread timing (about 0.2 s late)
+what-actually-happens-when-you-drink-coffee,2026-11-08,short,qpszRyQCOWI,brain-productivity,,49,what-happens,,plan,256,,,,,8,2,,source of the 'this is false' comment
+what-happens-if-you-stay-awake-48-hours,2026-11-08,short,Gf87E-reVTE,brain-productivity,,41,what-happens-if,,series,446,,,,,15,4,,sleep series part 2
+what-happens-2-seconds-after-you-tap-your-card,2026-11-07,short,yG6MwiRHQB8,money-math,,33,what-happens,,plan,5,,,,,4,0,,only money Short so far
+7-november-2026,2026-11-07,short,dkYKTdClyWY,,,23,,,,7,,,,,5,1,,untitled upload (no description)
+the-oldest-magic-trick-ever-written-down,2026-11-07,short,VtAOwQ5IN_M,off-pillar,,42,story,,plan,6,,,,,3,0,,history; off the channel's pillars
+what-happens-if-you-stay-awake-24-hours,2026-11-07,short,fQWHo7pFrnI,brain-productivity,,45,what-happens-if,,plan,1144,,,,,22,0,,sleep series part 1; best performer so far
+how-the-kurukshetra-war-really-ended,2026-11-07,short,QQmjDbntqj8,off-pillar,,43,story,,plan,322,,,,,10,2,,mythology/history; off the channel's pillars
+pov-a-rabbit-started-vlogging-in-the-forest,2026-11-07,short,jFo3fVNjRXg,off-pillar,,11,,,,10,,,,,4,0,,AI animal vlog; set as made for kids; off-brand (owner decision)
+your-brain-is-making-you-feel-guilty-about-money,2026-08-27,long,H8xpB9r4kag,money-math,,403,,,,8,8.37,,33,,2,0,0,long-form; analytics to 2026-11-08: 7 views, 3 min watched
+stop-wasting-time-on-ai-tools-you-dont-need,2026-08-27,long,Czd3muguzgs,ai-robots,,436,,,,5,37.38,,162,,2,0,0,long-form; analytics to 2026-11-08: 4 views, 10 min watched
