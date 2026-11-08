@@ -1,3 +1,3 @@
-slug,date,youtube_id,style,length_s,hook_type,topic_cluster,trigger,views,avg_pct_viewed,stayed_to_watch_pct,likes,comments,subs_gained,notes
-why-coffee-makes-some-people-tired,2026-11-08,7YwO_s4-Kxo,inside-out,44,agree-with-commenter,health-science,viewer-comment,,,,,,,first reply Short; off core topics
-he-stayed-awake-72-hours,2026-11-08,F3fQoS0m4rE,deep-dive,45,first-commenter-tribute,health-science,viewer-comment,,,,,,,first-commenter tribute; continues 24h/48h sleep series; Deep Dive 3D style (style changed vs Inside Out); name only no handle
+slug,date,format,youtube_id,pillar,style,length_s,hook_type,variable_tested,trigger,views,avg_pct_viewed,stayed_to_watch_pct,avg_view_duration_s,ctr_pct,likes,comments,subs_gained,notes
+why-coffee-makes-some-people-tired,2026-11-08,short,7YwO_s4-Kxo,brain-productivity,inside-out,44,agree-with-commenter,first-post,viewer-comment,,,,,,,,,first reply Short; captions used spread timing (about 0.2 s late)
+he-stayed-awake-72-hours,2026-11-08,short,F3fQoS0m4rE,brain-productivity,deep-dive,45,first-commenter-tribute,style (deep-dive instead of inside-out),viewer-comment,,,,,,,,,first-commenter tribute; continues the 24h/48h sleep series; name only no handle

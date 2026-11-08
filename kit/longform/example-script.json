@@ -1,0 +1,44 @@
+{
+  "title": "How Long Until Your Money Doubles?",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "lead": 0.5,
+  "outro": 1.5,
+  "gap": 0.3,
+  "music": "bed",
+  "sources": [
+    "Rule of 72: doubling time is about 72 divided by the yearly percentage return (an approximation of ln 2 / ln(1 + r)).",
+    "Compound growth checked by calculation: 1,000 x 1.12^24 = 15,179; 1,000 x 1.03^24 = 2,033."
+  ],
+  "lines": [
+    { "text": "How long does it take for your money to double?",
+      "scene": { "type": "title", "kicker": "The High-ROI Life", "title": "How long until your money *doubles?*", "sub": "A two-second trick bankers use" } },
+    { "text": "There's a simple trick for this, called the rule of seventy-two.",
+      "scene": { "type": "chapter", "n": 1, "title": "The rule of *72*" } },
+    { "text": "Divide seventy-two by your yearly return, and you get the number of years it takes to double.",
+      "scene": { "type": "stat", "value": 72, "at": "seventy-two", "label": "÷ your yearly return = *years* to double", "note": "An approximation that works best between about 4% and 15% a year" } },
+    { "text": "At four percent, that's about eighteen years. At eight percent, about nine. And at twelve percent, just six.",
+      "scene": { "type": "bars", "kicker": "Years to double", "items": [
+        { "label": "4% a year", "value": 18, "at": "four" },
+        { "label": "8% a year", "value": 9, "at": "eight" },
+        { "label": "12% a year", "value": 6, "at": "twelve" } ], "suffix": " yrs" } },
+    { "text": "Here's what that means for a thousand dollars growing at twelve percent a year.",
+      "scene": { "type": "line", "kicker": "$1,000 at 12% a year", "points": [1000, 1974, 3896, 7690, 15179], "labels": ["Start", "6 yrs", "12 yrs", "18 yrs", "24 yrs"], "at": "thousand", "endAt": "fifteen", "endLabel": "$15,179" } },
+    { "text": "It roughly doubles every six years, so after twenty-four years it's around fifteen thousand." },
+    { "text": "Now compare that with a savings account paying three percent.",
+      "scene": { "type": "compare", "at": "savings",
+        "left": { "title": "12% a year", "points": ["Doubles about every 6 years", "$1,000 becomes about $15,000 in 24 years"] },
+        "right": { "title": "3% a year", "points": ["Doubles in about 24 years", "$1,000 becomes about $2,000 in 24 years"] } } },
+    { "text": "Same money, same time. The only difference is the rate.",
+      "scene": { "type": "quote", "text": "Same money. Same time. Different *rate.*" } },
+    { "text": "So when you compare options, check the yearly return first, then divide seventy-two by it.",
+      "scene": { "type": "steps", "kicker": "Use it in 2 seconds", "items": [
+        { "text": "Find the yearly return", "at": "check" },
+        { "text": "Divide 72 by it", "at": "divide" },
+        { "text": "That's your doubling time" } ] } },
+    { "text": "Just remember, returns are never guaranteed, so treat it as a feel for the numbers, not a promise.",
+      "scene": { "type": "kit", "draw": "stopwatch", "s": 0.9, "text": "A feel for the numbers, not a *promise.*", "textAt": "guaranteed" } },
+    { "text": "Next, let's look at what inflation does to these numbers.",
+      "scene": { "type": "end", "title": "Next: what *inflation* does to your returns", "sub": "Watch it on the right" } }
+  ]
+}

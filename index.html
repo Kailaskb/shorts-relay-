@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The High-ROI Life · Shorts</title>
+<title>The High-ROI Life · Videos</title>
 <meta name="description" content="Short videos from The High-ROI Life: money, AI, technology, career growth and productivity.">
 <meta property="og:title" content="Why Coffee Makes Some People Tired">
 <meta property="og:description" content="Caffeine blocks the tired signal, it doesn't clear it. Genes, sleep and sugar change how it lands.">
@@ -21,6 +21,9 @@
   .card { background: var(--panel); border-radius: 22px; padding: 22px; display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 28px; align-items: start; }
   .player { width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden; }
   .player video { width: 100%; height: 100%; display: block; object-fit: contain; }
+  .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .card.long { grid-template-columns: minmax(0, 560px) 1fr; }
+  .card.long .player { aspect-ratio: 16 / 9; }
   .tag { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .card h2 { font-size: 26px; line-height: 1.2; margin: 8px 0 12px; }
   .card p { color: var(--muted); }
@@ -30,23 +33,25 @@
   .ghost { background: #2A2A31; color: var(--ivory); }
   .note { color: var(--muted); font-size: 13px; margin-top: 14px; min-height: 20px; }
   footer { max-width: 980px; margin: 0 auto; padding: 8px 24px 48px; color: var(--muted); font-size: 13px; }
-  @media (max-width: 720px) { .card { grid-template-columns: 1fr; } .player { max-width: 340px; margin: 0 auto; } }
+  @media (max-width: 720px) { .card { grid-template-columns: 1fr; } .player { max-width: 340px; margin: 0 auto; } .card.long .player { max-width: none; } }
 </style>
 </head>
 <body>
 <header>
   <div class="brand">The High-ROI Life</div>
-  <h1>Shorts</h1>
-  <p class="sub">Short, evidence-led videos on money, AI, technology and productivity. Share any link below.</p>
+  <h1>Videos</h1>
+  <p class="sub">Evidence-led Shorts and deep dives on money, AI, technology and productivity. Share any link below.</p>
 </header>
 <main id="list"></main>
 <footer>Always online. Direct video links work anywhere a file URL is needed.</footer>
 
 <script>
-  // Add a new object here for each new Short, newest first. Files live in /videos.
+  // One object per upload, newest first. Files live in /videos. format: "short" (9:16) or "long" (16:9).
+  // archived: true = the MP4 was removed from the repo to keep it small; the card plays the YouTube copy instead.
   var VIDEOS = [
     {
       slug: "he-stayed-awake-72-hours",
+      format: "short",
       title: "He Stayed Awake 72 Hours… Then Passed Out in the Shower",
       date: "2026-11-08",
       blurb: "A tribute to our first commenter, Chicken Nugget: microsleeps by day two, hallucinations by day three, and why a hot shower made him pass out.",
@@ -54,6 +59,7 @@
     },
     {
       slug: "why-coffee-makes-some-people-tired",
+      format: "short",
       title: "Why Coffee Makes Some People Tired",
       date: "2026-11-08",
       blurb: "A viewer said coffee always makes them tired. They are right about their own body: caffeine blocks the tired signal, it does not clear it, and genes, sleep and sugar change how it lands.",
@@ -63,24 +69,28 @@
 
   var base = location.href.replace(/[#?].*$/, "").replace(/index\.html$/, "");
   var list = document.getElementById("list");
+  var ytId = function (u) { var m = /(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/.exec(u || ""); return m ? m[1] : ""; };
   VIDEOS.forEach(function (v) {
-    var mp4 = "videos/" + v.slug + ".mp4", jpg = "videos/" + v.slug + ".jpg";
+    var mp4 = "videos/" + v.slug + ".mp4", jpg = "videos/" + v.slug + ".jpg", local = !v.archived;
     var el = document.createElement("section");
-    el.className = "card";
+    el.className = "card" + (v.format === "long" ? " long" : "");
+    var player = local
+      ? '<video controls playsinline preload="metadata" poster="' + jpg + '" src="' + mp4 + '"></video>'
+      : '<iframe src="https://www.youtube-nocookie.com/embed/' + ytId(v.youtube) + '" title="video" allowfullscreen loading="lazy"></iframe>';
     el.innerHTML =
-      '<div class="player"><video controls playsinline preload="metadata" poster="' + jpg + '" src="' + mp4 + '"></video></div>' +
-      '<div><div class="tag">' + v.date + '</div><h2></h2><p></p>' +
+      '<div class="player">' + player + '</div>' +
+      '<div><div class="tag">' + v.date + (v.format === "long" ? " · Video" : " · Short") + '</div><h2></h2><p></p>' +
       '<div class="actions">' +
         '<button class="btn primary" type="button">Copy share link</button>' +
-        '<a class="btn ghost" href="' + mp4 + '" download>Download MP4</a>' +
+        (local ? '<a class="btn ghost" href="' + mp4 + '" download>Download MP4</a>' : '') +
         (v.youtube ? '<a class="btn ghost" href="' + v.youtube + '" target="_blank" rel="noopener">Watch on YouTube</a>' : '') +
       '</div><div class="note"></div></div>';
     el.querySelector("h2").textContent = v.title;
     el.querySelector("p").textContent = v.blurb;
     var note = el.querySelector(".note");
     el.querySelector("button").addEventListener("click", function () {
-      var link = base + mp4;
-      var done = function () { note.textContent = "Direct video link copied."; };
+      var link = local ? base + mp4 : v.youtube;
+      var done = function () { note.textContent = local ? "Direct video link copied." : "YouTube link copied."; };
       if (navigator.clipboard) { navigator.clipboard.writeText(link).then(done, function () { note.textContent = link; }); }
       else { note.textContent = link; }
     });
