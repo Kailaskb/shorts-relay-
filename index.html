@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The High-ROI Life · Shorts</title>
+<meta name="description" content="Short videos from The High-ROI Life: money, AI, technology, career growth and productivity.">
+<meta property="og:title" content="Why Coffee Makes Some People Tired">
+<meta property="og:description" content="Caffeine blocks the tired signal, it doesn't clear it. Genes, sleep and sugar change how it lands.">
+<meta property="og:image" content="https://kailaskb.github.io/shorts-relay-/videos/why-coffee-makes-some-people-tired.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg:#141417; --panel:#1C1C21; --ivory:#F4EFE4; --muted:#A39D90; --gold:#D9B76A; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ivory); font: 16px/1.5 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; min-height: 100vh; }
+  header { max-width: 980px; margin: 0 auto; padding: 40px 24px 8px; }
+  .brand { color: var(--gold); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
+  h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin-top: 10px; font-weight: 800; }
+  .sub { color: var(--muted); margin-top: 10px; max-width: 560px; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px; display: grid; gap: 32px; }
+  .card { background: var(--panel); border-radius: 22px; padding: 22px; display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 28px; align-items: start; }
+  .player { width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden; }
+  .player video { width: 100%; height: 100%; display: block; object-fit: contain; }
+  .tag { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .card h2 { font-size: 26px; line-height: 1.2; margin: 8px 0 12px; }
+  .card p { color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 14px; cursor: pointer; border: 0; font-family: inherit; }
+  .primary { background: var(--gold); color: #141417; }
+  .ghost { background: #2A2A31; color: var(--ivory); }
+  .note { color: var(--muted); font-size: 13px; margin-top: 14px; min-height: 20px; }
+  footer { max-width: 980px; margin: 0 auto; padding: 8px 24px 48px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 720px) { .card { grid-template-columns: 1fr; } .player { max-width: 340px; margin: 0 auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">The High-ROI Life</div>
+  <h1>Shorts</h1>
+  <p class="sub">Short, evidence-led videos on money, AI, technology and productivity. Share any link below.</p>
+</header>
+<main id="list"></main>
+<footer>Always online. Direct video links work anywhere a file URL is needed.</footer>
+
+<script>
+  // Add a new object here for each new Short, newest first. Files live in /videos.
+  var VIDEOS = [
+    {
+      slug: "why-coffee-makes-some-people-tired",
+      title: "Why Coffee Makes Some People Tired",
+      date: "2026-11-08",
+      blurb: "A viewer said coffee always makes them tired. They are right about their own body: caffeine blocks the tired signal, it does not clear it, and genes, sleep and sugar change how it lands.",
+      youtube: ""
+    }
+  ];
+
+  var base = location.href.replace(/[#?].*$/, "").replace(/index\.html$/, "");
+  var list = document.getElementById("list");
+  VIDEOS.forEach(function (v) {
+    var mp4 = "videos/" + v.slug + ".mp4", jpg = "videos/" + v.slug + ".jpg";
+    var el = document.createElement("section");
+    el.className = "card";
+    el.innerHTML =
+      '<div class="player"><video controls playsinline preload="metadata" poster="' + jpg + '" src="' + mp4 + '"></video></div>' +
+      '<div><div class="tag">' + v.date + '</div><h2></h2><p></p>' +
+      '<div class="actions">' +
+        '<button class="btn primary" type="button">Copy share link</button>' +
+        '<a class="btn ghost" href="' + mp4 + '" download>Download MP4</a>' +
+        (v.youtube ? '<a class="btn ghost" href="' + v.youtube + '" target="_blank" rel="noopener">Watch on YouTube</a>' : '') +
+      '</div><div class="note"></div></div>';
+    el.querySelector("h2").textContent = v.title;
+    el.querySelector("p").textContent = v.blurb;
+    var note = el.querySelector(".note");
+    el.querySelector("button").addEventListener("click", function () {
+      var link = base + mp4;
+      var done = function () { note.textContent = "Direct video link copied."; };
+      if (navigator.clipboard) { navigator.clipboard.writeText(link).then(done, function () { note.textContent = link; }); }
+      else { note.textContent = link; }
+    });
+    list.appendChild(el);
+  });
+</script>
+</body>
+</html>
