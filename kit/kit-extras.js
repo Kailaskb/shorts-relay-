@@ -139,3 +139,89 @@ export function dna(x, y, h, t) {
   for (const [yy, dx] of A) line([[x + dx, yy], [x - dx, yy]], '#8B8B93', 9);
   for (const [yy, dx, d] of A) { const sz = 30 + d * 6; rr(x + dx - sz / 2, yy - sz / 2, sz, sz, 10); ctx.fillStyle = GOLD; ctx.fill(); rr(x - dx - sz / 2, yy - sz / 2, sz, sz, 10); ctx.fillStyle = '#2B2B31'; ctx.fill(); }
 }
+
+// ═════════════════════════ VOLCANO / WASTE EXTRAS ═════════════════════════
+/** volcano cone on a dark background. origin = crater centre. glow 0..1 = lava brightness, t drives the shimmer */
+export function volcano(x, y, s, glow = 1, t = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  if (glow > 0) {
+    const g = ctx.createRadialGradient(0, -20, 20, 0, -20, 460);
+    g.addColorStop(0, `rgba(217,183,106,${0.5 * glow})`); g.addColorStop(1, 'rgba(217,183,106,0)');
+    ctx.fillStyle = g; ctx.fillRect(-500, -500, 1000, 1000);
+  }
+  ctx.beginPath(); ctx.moveTo(-135, 0); ctx.lineTo(-540, 660); ctx.lineTo(540, 660); ctx.lineTo(135, 0); ctx.closePath(); ctx.fillStyle = '#34343C'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(40, 0); ctx.lineTo(135, 0); ctx.lineTo(540, 660); ctx.lineTo(170, 660); ctx.closePath(); ctx.fillStyle = '#2A2A31'; ctx.fill();
+  ctx.save(); ctx.globalAlpha = glow;
+  line([[-70, 24], [-108, 140], [-84, 270], [-150, 430]], C.yellow, 26);
+  line([[70, 24], [104, 170], [74, 300]], C.yellow, 22);
+  ctx.restore();
+  ell(0, 0, 140, 36, '#26262C');
+  ell(0, 2, 122, 25, glow > 0.05 ? C.yellow : '#4A4A53');
+  ctx.save(); ctx.globalAlpha = glow;
+  ell(Math.sin(t * 2) * 40, -2, 44, 7, '#F2E2B4'); ell(-60 + Math.cos(t * 1.7) * 30, 10, 26, 5, '#F2E2B4');
+  ctx.restore();
+  ctx.restore();
+}
+/** knotted trash bag. origin = centre */
+export function trashBag(x, y, s, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s); ctx.lineJoin = 'round';
+  ctx.beginPath(); ctx.moveTo(-30, -70); ctx.bezierCurveTo(-112, -40, -122, 70, -60, 100); ctx.quadraticCurveTo(0, 122, 60, 100); ctx.bezierCurveTo(122, 70, 112, -40, 30, -70); ctx.closePath();
+  ctx.fillStyle = '#EDE7D8'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(40, -62); ctx.bezierCurveTo(112, -30, 112, 70, 60, 100); ctx.quadraticCurveTo(92, 20, 40, -62); ctx.fillStyle = '#CFC7B2'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-30, -70); ctx.lineTo(-56, -122); ctx.lineTo(-8, -84); ctx.lineTo(8, -84); ctx.lineTo(56, -122); ctx.lineTo(30, -70); ctx.closePath(); ctx.fillStyle = '#EDE7D8'; ctx.fill();
+  ctx.save(); ctx.globalAlpha = 0.7; ell(-52, 8, 12, 38, '#FFFFFF', 0.2); ctx.restore();
+  ctx.restore();
+}
+/** flame (red outer, gold middle, pale core). origin = bottom centre */
+export function flame(x, y, s, t = 0, ph = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  const f = (w, h, col, p) => {
+    const k = 1 + 0.12 * Math.sin(t * 14 + p + ph);
+    ctx.beginPath(); ctx.moveTo(-w, 0); ctx.bezierCurveTo(-w * 1.1, -h * 0.4, -w * 0.2, -h * 0.55, Math.sin(t * 9 + p + ph) * w * 0.35, -h * k);
+    ctx.bezierCurveTo(w * 0.3, -h * 0.55, w * 1.1, -h * 0.4, w, 0); ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+  };
+  f(60, 170, C.red, 0); f(42, 125, C.yellow, 1.3); f(22, 80, '#F2E2B4', 2.1);
+  ctx.restore();
+}
+/** radiation trefoil on a gold disc. a = alpha */
+export function trefoil(x, y, s, a = 1) {
+  if (a <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= a;
+  circle(0, 0, 150, C.yellow);
+  for (let k = 0; k < 3; k++) {
+    const an = -Math.PI / 2 + k * TAU / 3;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 104, an - Math.PI / 6, an + Math.PI / 6); ctx.closePath(); ctx.fillStyle = C.ink; ctx.fill();
+  }
+  circle(0, 0, 34, C.yellow); circle(0, 0, 22, C.ink);
+  ctx.restore();
+}
+/** steel barrel with a trefoil. origin = centre */
+export function barrel(x, y, s, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  rr(-90, -130, 180, 270, 26); ctx.fillStyle = '#4A4A53'; ctx.fill();
+  rr(-90, -130, 56, 270, 26); ctx.fillStyle = '#5C5C66'; ctx.fill();
+  rr(-90, -78, 180, 16, 0); ctx.fillStyle = C.yellow; ctx.fill();
+  rr(-90, 70, 180, 16, 0); ctx.fillStyle = C.yellow; ctx.fill();
+  ell(0, -130, 90, 22, '#6A6A74');
+  trefoil(0, -4, 0.34);
+  ctx.restore();
+}
+/** thermometer. f = 0..1 mercury level. origin = tube centre */
+export function thermo(x, y, s, f) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  rr(-36, -300, 72, 500, 36); ctx.fillStyle = '#E6DFCF'; ctx.fill();
+  circle(0, 230, 70, '#E6DFCF');
+  circle(0, 230, 52, C.red);
+  rr(-16, 200 - f * 470, 32, f * 470 + 40, 16); ctx.fillStyle = C.red; ctx.fill();
+  for (let i = 0; i < 6; i++) { ctx.fillStyle = '#9A937F'; ctx.fillRect(40, -270 + i * 84, i % 2 ? 26 : 44, 8); }
+  ctx.restore();
+}
+/** rising ash cloud. x, y = crater; p 0..1 = how far it has grown */
+export function ashPlume(x, y, p, t = 0) {
+  for (let i = 0; i < 36; i++) {
+    const u = clamp(p * 1.25 - i * 0.017, 0, 1); if (u <= 0) continue;
+    const h = eo(u) * 1050, sp = 1 + h / 260;
+    const px = x + Math.sin(i * 2.3 + t * 0.8) * 34 * sp + (rnd(i) - 0.5) * 70 * (h / 300);
+    circle(px, y - h, 36 + 92 * eo(u) * (0.55 + rnd(i + 5)), i % 3 ? '#4A4A53' : '#5C5C66');
+  }
+}
