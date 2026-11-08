@@ -10,7 +10,10 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 5. Viewer replies: answer a real comment, agree-first when they have a point.
 6. Wild what-ifs: hypothetical scenarios built on real science (geology, space, the body, history). Say it is hypothetical in the first line; every fact inside it is real and sourced.
 
-## Backlog (Short unless marked LONG)
+## Backlog (Short unless marked LONG; every Short stars Kai, see kit/CAST.md)
+- [ ] Kai tries it: what happens if Kai drinks five coffees? (caffeine half-life, the crash; follow-up to the coffee Shorts). Format: Kai tries it.
+- [ ] Kai vs the numbers: Kai spends 100 rupees a day vs invests it, 10 years (money math, Bit shows the compound result). Format: Kai vs the numbers.
+- [ ] Kai asks Bit: why robots still can't fold laundry (Moravec's paradox; the owner's field). Format: Kai asks Bit.
 - [ ] Follow-up idea (from the volcano Short): what actually happens inside a trash incinerator, hour by hour (850 C for two seconds, scrubbers, ash). Hook: "what actually happens when". Check numbers against EU 2010/75/EU.
 - [ ] What-if: what if there was a volcano under the Great Pyramid? (Giza geology, how volcanoes form, what an eruption would do). Hook: question. Deep Dive 3D.
 - [ ] What-if: what happens if you fall into the Mariana Trench? (pressure, light, temperature by depth). Hook: question. Deep Dive 3D.
@@ -18,7 +21,6 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 - [ ] What-if: what happens if you stop drinking water for 3 days? (body, by the hour). Hook: question; health sources required.
 - [ ] What-if: what if you put all the world's money in one pile? (how much money exists, most is not cash). Hook: number first; bridge to money.
 - [ ] Bridge (brain x money): what one short night does to your money decisions (sleep loss and risk-taking). Hook: "what happens if", the sleep series' winning format, aimed at the money pillar. Needs study sources.
-- [ ] Sleep series: the 11-day no-sleep record (Randy Gardner, 1964). Hook: number first. Viewer comment idea: "stayed awake 72 hrs playing Runescape" (48 h Short).
 - [ ] Bridge (brain x productivity): what 6 hours of sleep a night for 2 weeks does to your focus (Van Dongen et al., 2003). Hook: myth-bust. LONG candidate: "the sleep debt you can't feel".
 - [ ] Money math: how long until your money doubles (rule of 72). Hook: question. LONG candidate: sample in kit/longform/example-script.json.
 - [ ] AI and robots: why robots still can't fold laundry (Moravec's paradox). Hook: myth-bust. LONG candidate.
@@ -32,6 +34,7 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 - [ ] Money math: what a small daily spend becomes in 10 years. Hook: number first.
 
 ## Done
+- [ ] 2026-11-08 Kai episode 1: what happens if you stay awake 11 days (Randy Gardner replay; cast debut). Upload pending (Zapier throttled).
 - [x] 2026-11-08 Wild what-if (viewer-style question): why we can't use a volcano as a dustbin (Inside Out + kit, 47 s): https://www.youtube.com/watch?v=IBIIBQScTqs
 - [x] 2026-11-08 Brain: he stayed awake 72 hours (first-commenter tribute, sleep series, Deep Dive 3D): https://www.youtube.com/watch?v=F3fQoS0m4rE
 - [x] 2026-11-08 Brain: why coffee makes some people tired (viewer reply): https://www.youtube.com/watch?v=7YwO_s4-Kxo

@@ -11,6 +11,11 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 - Titles: `<question or claim> <one emoji>` (+ ` #shorts` on Shorts). Category Education (27).
 - Custom thumbnails: unknown (set to yes once the channel is phone-verified; then long-form uploads send `thumbnail`).
 
+## Recurring cast (from 2026-11-08, owner's request)
+- Every Short stars **Kai** (gold hoodie, one hair curl, the everyman who tries every example) and usually his robot **Bit** (shows the numbers; the engineer angle). Bible, rules and series formats: `kit/CAST.md`; code: `K.kai`, `K.bit` in `kit/kit-extras.js`. Made with the series-short skill.
+- Why: a recurring character is the channel's "visual moat" (a signature look copycats cannot clone) and gives viewers someone to come back for. Ad research links memorable characters to about 30% better profit odds (System1); no YouTube study isolates it, so we test it: compare Kai episodes with the earlier non-character Shorts.
+- Keep the characters constant and everything else varied (topic, set, hook, series format) so the channel never reads as templated.
+
 ## Monetization targets (checked 2026-11-08; re-check monthly and when a date passes)
 | Tier | Needs | Unlocks |
 |---|---|---|
@@ -23,6 +28,8 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 
 ## Strategy (two tracks)
 - Shorts: 2 a day (morning run and evening run, scheduled), 35-50 s by default; reach, subscribers, the fan-funding tier. If usage limits get close, the evening run skips its Short and says so.
+- Cadence ceiling (checked 2026-11-08): the owner asked for 5 Shorts a day and 3 long-form a week. One full run (research, build, frame QA, fact-check, publish) used a large share of a 5-hour usage window, so the plan supports about 2 Shorts a day plus 1 long-form a week, not more. YouTube says frequency itself is not a ranking factor, and mass-produced near-duplicates risk the inauthentic-content rule, so quality per Short wins over count.
+- Idea process (Kallaway, 2026-10-29): idea = topic + angle + substance. Validate the topic with data (our analytics; vidIQ outliers and trending when connected), then add our own angle (a calculation, the engineer view) and sourced substance. Hooks pass the 4 S's: subject in the first sentence, stakes, simple words, short and active.
 - Long-form: weekly, 8-12 min; a deep dive on the pillar whose Shorts retained best; builds watch hours for the ads tier. Shorts in that pillar link to it (Related video).
 - Posts: 2-3 a week (a poll on the next topic, an image with one insight, a quiz).
 - Instagram: every Short on both accounts, first line varied per account.
@@ -32,11 +39,13 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 Same brand, never the same video: rotate hook types and scene layouts, add one topic-specific visual each time, and give every video one original insight (a calculation, a comparison, an engineer's view). Never post near-duplicates.
 
 ## Status
+- 2026-11-08 (18:50 IST): Kai episode 1 "What happens if you stay awake 11 days?" built (51 s, reviewer-checked) and pushed to the site; YouTube upload throttled by Zapier twice, retry scheduled. Still 7 subscribers. vidIQ connector connected by the owner.
 - 2026-11-08 (16:40 IST): 13th upload, the volcano-dustbin Short (pillar 6, Inside Out + kit, 47 s). Still 7 subscribers. Chrome extension not connected on mobile runs, so community posts and Instagram are owner tasks until it is.
 - 2026-11-08: 12 public uploads (10 Shorts since 2026-11-07, 2 long-form from 2026-08-27), 7 subscribers, about 2,300 views, about 0.2 public watch hours. All uploads are in analytics/videos.csv. Zapier analytics work (Data API counts in real time; the Analytics report lags 24-48 h). Claude in Chrome connected 2026-11-08, Studio steps not yet run. Instagram for Business not enabled in Zapier.
 - Owner decisions pending: the rabbit vlog is marked made for kids and is off-brand; three other uploads are off the pillars (magic trick, Kurukshetra, an untitled "7 November 2026" Short). Keep, unlist or leave is the owner's call.
 
 ## What the data says
+- 2026-11-08 18:00 IST: sleep series keeps climbing (24 h Short 1,166 views; 48 h 902). The two newest Shorts (72 h tribute, volcano) had 2-3 views after 1-3 hours, far below the earlier ones at the same age: re-check at 48 h before drawing conclusions. Sleep stays the proven topic, so Kai's debut continues it.
 - 2026-11-08 (1-2 days of data, early): the "what happens if you stay awake" sleep series leads (24 h: 1,144 views; 48 h: 446), then Kurukshetra (322) and the coffee explainer (256). The one money Short got 5 views. The body/brain "what happens if" hook is the only proven format so far: keep it, and bridge it to the money, AI and productivity pillars instead of drifting off-niche. Judge a Short after 48-72 h, not hours.
 - 2026-11-08: the two August long-form videos hold 8% and 37% average viewed (about 12 minutes total watch time). Long-form needs a stronger hook in the first 30 s before it can build watch hours.
 
