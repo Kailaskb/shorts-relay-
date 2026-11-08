@@ -31,7 +31,7 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 Same brand, never the same video: rotate hook types and scene layouts, add one topic-specific visual each time, and give every video one original insight (a calculation, a comparison, an engineer's view). Never post near-duplicates.
 
 ## Status
-- 2026-11-08: 1 Short posted (coffee reply). No analytics read yet. Zapier YouTube read actions not enabled yet.
+- 2026-11-08: 2 Shorts logged (coffee reply in Inside Out; 72-hour first-commenter tribute in Deep Dive 3D, a style test). Earlier uploads from the Drive route (a 24h/48h sleep series and others) are not logged yet: the first analytics run backfills them into analytics/videos.csv. No analytics read yet. Zapier YouTube read actions not enabled yet.
 
 ## What the data says
 - (empty until 5+ posts)

@@ -22,4 +22,5 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 - [ ] Money math: what a small daily spend becomes in 10 years. Hook: number first.
 
 ## Done
+- [x] 2026-11-08 Brain: he stayed awake 72 hours (first-commenter tribute, sleep series, Deep Dive 3D): https://www.youtube.com/watch?v=F3fQoS0m4rE
 - [x] 2026-11-08 Brain: why coffee makes some people tired (viewer reply): https://www.youtube.com/watch?v=7YwO_s4-Kxo
