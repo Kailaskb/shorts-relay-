@@ -8,8 +8,14 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 3. Career ROI: skills, pay, learning faster.
 4. Brain and productivity: sleep, focus, energy (health claims need strong sources).
 5. Viewer replies: answer a real comment, agree-first when they have a point.
+6. Wild what-ifs: hypothetical scenarios built on real science (geology, space, the body, history). Say it is hypothetical in the first line; every fact inside it is real and sourced.
 
 ## Backlog (Short unless marked LONG)
+- [ ] What-if: what if there was a volcano under the Great Pyramid? (Giza geology, how volcanoes form, what an eruption would do). Hook: question. Deep Dive 3D.
+- [ ] What-if: what happens if you fall into the Mariana Trench? (pressure, light, temperature by depth). Hook: question. Deep Dive 3D.
+- [ ] What-if: what if the Moon disappeared tonight? (tides, nights, Earth's tilt). Hook: question.
+- [ ] What-if: what happens if you stop drinking water for 3 days? (body, by the hour). Hook: question; health sources required.
+- [ ] What-if: what if you put all the world's money in one pile? (how much money exists, most is not cash). Hook: number first; bridge to money.
 - [ ] Bridge (brain x money): what one short night does to your money decisions (sleep loss and risk-taking). Hook: "what happens if", the sleep series' winning format, aimed at the money pillar. Needs study sources.
 - [ ] Sleep series: the 11-day no-sleep record (Randy Gardner, 1964). Hook: number first. Viewer comment idea: "stayed awake 72 hrs playing Runescape" (48 h Short).
 - [ ] Bridge (brain x productivity): what 6 hours of sleep a night for 2 weeks does to your focus (Van Dongen et al., 2003). Hook: myth-bust. LONG candidate: "the sleep debt you can't feel".

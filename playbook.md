@@ -4,7 +4,8 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 
 ## Brand (do not drift)
 - Premium, minimal, calm, ambitious, trustworthy. Graphite #17171B / #202026, champagne gold #D9B76A, ivory #F4EFE4. No green. Red only for danger or "false". No decorative circles, borders, clutter, crypto looks or gradients.
-- Focus: money, AI, technology, career growth, productivity, higher ROI. Viewer-comment replies when a comment is a good hook.
+- Focus (owner, 2026-11-08: keep it general, name stays): curiosity explainers about the body, brain, science, history, money, AI and technology, plus viewer-comment replies. Proven hook: "what happens if...". Bold hypothetical what-ifs are welcome when clearly framed as hypothetical and built on real science.
+- Animation: Deep Dive 3D (the sleep series' style) for body and what-if topics; Inside Out + kit for money and AI explainers. 3D renders take about 30-40 min per Short in the cloud sandbox (software GL): budget for it.
 - Shorts: faceless-shorts Inside Out + `kit/apply.sh`; voice `am_michael` x1.05; burned captions with one gold word per chunk; the last line loops back or asks a question.
 - Long-form: `kit/longform` (16:9, same palette and kit, separate .srt subtitles, chapters, end screen).
 - Titles: `<question or claim> <one emoji>` (+ ` #shorts` on Shorts). Category Education (27).
@@ -21,7 +22,7 @@ Read at the start of every run. The youtube-growth skill keeps "Status" and "Wha
 - Apply the same day any tier is met (YouTube Studio > Earn). Until 2027-02-01 the lower ads bar applies.
 
 ## Strategy (two tracks)
-- Shorts: daily, 35-50 s by default; reach, subscribers, the fan-funding tier.
+- Shorts: 2 a day (morning run and evening run, scheduled), 35-50 s by default; reach, subscribers, the fan-funding tier. If usage limits get close, the evening run skips its Short and says so.
 - Long-form: weekly, 8-12 min; a deep dive on the pillar whose Shorts retained best; builds watch hours for the ads tier. Shorts in that pillar link to it (Related video).
 - Posts: 2-3 a week (a poll on the next topic, an image with one insight, a quiz).
 - Instagram: every Short on both accounts, first line varied per account.
