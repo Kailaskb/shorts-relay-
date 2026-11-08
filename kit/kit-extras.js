@@ -225,3 +225,122 @@ export function ashPlume(x, y, p, t = 0) {
     circle(px, y - h, 36 + 92 * eo(u) * (0.55 + rnd(i + 5)), i % 3 ? '#4A4A53' : '#5C5C66');
   }
 }
+
+// ═════════════ THE CAST (High-ROI Life recurring characters; see kit/CAST.md) ═════════════
+// Kai: the everyman who acts out every example (gold hoodie, one hair curl). Bit: his small robot, shows the numbers.
+const KAI = { shirt: '#D9B76A', shirtShade: '#BC9A55', hair: '#232328', hairHi: '#3A3A42', pants: '#26262C', pantsShade: '#1D1D22' };
+const BIT = { body: '#202026', fin: '#2E2E36', base: '#17171B', visor: '#0E0E11' };
+/** Kai. o = man() options (x, y, s, arm, armL, finger, eyes, mouth, brow, smirk, frown, look, xray, holding)
+ *  + tired 0..1 (heavy lids + eye bags), rot (whole body rotation around his chest, e.g. -PI/2 lying down) */
+export function kai(o) {
+  const keep = {}; for (const k in KAI) { keep[k] = C[k]; C[k] = KAI[k]; }
+  const s = o.s || 1;
+  ctx.save();
+  if (o.rot) { ctx.translate(o.x, o.y); ctx.rotate(o.rot); ctx.translate(-o.x, -o.y); }
+  man(o);
+  ctx.save(); ctx.translate(o.x, o.y); ctx.scale(s, s);
+  if (!o.xray) {
+    for (const sd of [-1, 1]) line([[sd * 24, -205], [sd * 28, -122]], C.bg, 9);
+    rr(-78, 92, 156, 78, 26); ctx.fillStyle = KAI.shirtShade; ctx.fill();
+  }
+  ctx.beginPath(); ctx.moveTo(-16, -468); ctx.quadraticCurveTo(-44, -566, 50, -592); ctx.quadraticCurveTo(2, -550, 24, -470); ctx.closePath();
+  ctx.fillStyle = KAI.hair; ctx.fill();
+  const td = clamp(o.tired || 0), lk = (o.look || 0) * 6;
+  if (td > 0 && !o.eyes) {
+    ctx.fillStyle = C.skin; for (const sd of [-1, 1]) { rr(sd * 40 - 20 + lk, -364, 40, 4 + 28 * td, 6); ctx.fill(); }
+    ctx.globalAlpha = 0.5 * td; ctx.strokeStyle = '#9A7563'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+    for (const sd of [-1, 1]) { ctx.beginPath(); ctx.moveTo(sd * 40 - 16, -321); ctx.quadraticCurveTo(sd * 40, -313, sd * 40 + 16, -321); ctx.stroke(); }
+    ctx.globalAlpha = 1;
+  }
+  ctx.restore(); ctx.restore();
+  for (const k in keep) C[k] = keep[k];
+}
+/** Bit. o = { x, y, s, t (bob + thrust), face: 'n'|'happy'|'wide'|'sad'|'scan', look -1..1, tilt, screen (text above him), screenA 0..1 } */
+export function bit(o) {
+  const s = o.s || 1, t = o.t || 0, bob = Math.sin(t * 3.2) * 10, f = o.face || 'n', lk = (o.look || 0) * 10;
+  ctx.save(); ctx.translate(o.x, o.y + bob); ctx.rotate(o.tilt || 0); ctx.scale(s, s);
+  ctx.globalAlpha = 0.6 + 0.3 * Math.sin(t * 20);
+  for (const sx of [-34, 34]) { rr(sx - 8, 82, 16, 30 + 10 * Math.sin(t * 17 + sx), 8); ctx.fillStyle = C.yellow; ctx.fill(); }
+  ctx.globalAlpha = 1;
+  line([[0, -66], [0, -104]], BIT.body, 9); rr(-13, -126, 26, 26, 8); ctx.fillStyle = C.yellow; ctx.fill();
+  for (const sd of [-1, 1]) { rr(sd * 98 - 14, -18, 28, 58, 12); ctx.fillStyle = BIT.fin; ctx.fill(); }
+  rr(-88, -70, 176, 146, 48); ctx.fillStyle = BIT.body; ctx.fill();
+  rr(-88, 34, 176, 42, [0, 0, 48, 48]); ctx.fillStyle = BIT.base; ctx.fill();
+  rr(-64, -46, 128, 58, 28); ctx.fillStyle = BIT.visor; ctx.fill();
+  ctx.fillStyle = C.yellow; ctx.strokeStyle = C.yellow; ctx.lineCap = 'round'; ctx.lineWidth = 8;
+  if (f === 'happy') for (const sd of [-1, 1]) { ctx.beginPath(); ctx.arc(sd * 26 + lk, -8, 12, Math.PI * 1.15, Math.PI * 1.85); ctx.stroke(); }
+  else if (f === 'wide') for (const sd of [-1, 1]) { rr(sd * 26 - 12 + lk, -36, 24, 38, 11); ctx.fill(); }
+  else if (f === 'sad') for (const sd of [-1, 1]) { ctx.beginPath(); ctx.moveTo(sd * 26 - 12 + lk, -14 - sd * 5); ctx.lineTo(sd * 26 + 12 + lk, -14 + sd * 5); ctx.stroke(); }
+  else if (f === 'scan') { const u = (Math.sin(t * 7) + 1) / 2; rr(-50 + u * 76, -24, 24, 16, 8); ctx.fill(); }
+  else for (const sd of [-1, 1]) { rr(sd * 26 - 9 + lk, -30, 18, 28, 9); ctx.fill(); }
+  ctx.restore();
+  const a = o.screenA ?? 1;
+  if (o.screen && a > 0) {
+    ctx.save(); ctx.translate(o.x, o.y + bob - 200 * s); ctx.scale(s * eob(clamp(a)), s * eob(clamp(a)));
+    ctx.font = '900 66px Inter'; const tw = ctx.measureText(o.screen).width;
+    rr(-tw / 2 - 34, -54, tw + 68, 108, 26); ctx.fillStyle = BIT.body; ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-16, 52); ctx.lineTo(16, 52); ctx.lineTo(0, 76); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = C.yellow; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(o.screen, 0, 4);
+    ctx.restore();
+  }
+}
+/** the same room at night: graphite walls, a moon in the window */
+export function nightRoom() {
+  fillAll('#202026');
+  ctx.fillStyle = '#17171B'; ctx.fillRect(-300, 1560, W + 600, 700);
+  rr(600, 230, 360, 440, 22); ctx.fillStyle = '#2E2E36'; ctx.fill();
+  rr(622, 252, 316, 396, 12); ctx.fillStyle = '#121215'; ctx.fill();
+  moon(800, 380, 0.8);
+  ctx.fillStyle = '#2E2E36'; ctx.fillRect(772, 252, 14, 396); ctx.fillRect(622, 442, 316, 14);
+}
+/** flat TV on a stand. glow 0..1 flickers the screen */
+export function tv(x, y, s, t = 0, glow = 1) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  for (const sd of [-1, 1]) { rr(sd * 120 - 10, 120, 20, 90, 8); ctx.fillStyle = '#2E2E36'; ctx.fill(); }
+  rr(-190, -140, 380, 270, 26); ctx.fillStyle = '#0E0E11'; ctx.fill();
+  rr(-166, -116, 332, 222, 14); ctx.fillStyle = '#D9D2C3'; ctx.globalAlpha = 0.5 + 0.4 * glow * (0.6 + 0.4 * Math.sin(t * 23)); ctx.fill(); ctx.globalAlpha = 1;
+  for (let i = 0; i < 5; i++) { rr(-150, -96 + i * 44 + ((t * 120) % 44), 300, 8, 4); ctx.fillStyle = '#B9B1A1'; ctx.fill(); }
+  ctx.restore();
+}
+/** a brick wall that melts away (melt 0..1) to show a path between gold trees (reveal 0..1) */
+export function meltWall(x, y, w, h, melt, reveal, t = 0) {
+  ctx.save(); rr(x, y, w, h, 30); ctx.clip();
+  ctx.fillStyle = C.sky; ctx.fillRect(x, y, w, h);
+  ctx.fillStyle = C.floor; ctx.fillRect(x, y + h * 0.55, w, h);
+  ctx.beginPath(); ctx.moveTo(x + w * 0.44, y + h * 0.55); ctx.lineTo(x + w * 0.56, y + h * 0.55); ctx.lineTo(x + w * 0.8, y + h); ctx.lineTo(x + w * 0.2, y + h); ctx.closePath(); ctx.fillStyle = C.pot; ctx.fill();
+  for (let i = 0; i < 8; i++) {
+    const sd = i % 2 ? 1 : -1, k = Math.floor(i / 2), u = 1 - k * 0.22, tx = x + w / 2 + sd * (w * 0.16 + k * w * 0.1) * (1.6 - u), ty = y + h * 0.55 + (1 - u) * -10 + u * h * 0.25;
+    const g = clamp(reveal * 1.6 - k * 0.2), th = 210 * u * g;
+    if (g <= 0) continue;
+    rr(tx - 9 * u, ty - 20, 18 * u, 60 * u, 6); ctx.fillStyle = C.hair; ctx.fill();
+    ctx.beginPath(); ctx.moveTo(tx, ty - 20 - th); ctx.lineTo(tx + 70 * u * g, ty - 10); ctx.lineTo(tx - 70 * u * g, ty - 10); ctx.closePath(); ctx.fillStyle = k % 2 ? C.yellow : '#BC9A55'; ctx.fill();
+  }
+  const bw = 120, bh = 60;
+  for (let r = 0; r * bh < h; r++) for (let c = -1; c * bw < w; c++) {
+    const id = r * 31 + c, fall = clamp(melt * 1.7 - rnd(id) * 0.7), bx = x + c * bw + (r % 2) * bw / 2, by = y + r * bh + fall * fall * (h + 200);
+    if (fall >= 1) continue;
+    ctx.globalAlpha = 1 - fall * 0.6; rr(bx + 4, by + 4, bw - 8, bh - 8 + fall * 40, 8); ctx.fillStyle = r % 2 ? '#4A4A53' : '#3B3B43'; ctx.fill();
+  }
+  ctx.globalAlpha = 1; ctx.restore();
+}
+/** a generic world-records book (no real logos) */
+export function recordBook(x, y, s, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  rr(-200, -260, 400, 520, 24); ctx.fillStyle = '#202026'; ctx.fill();
+  rr(-200, -260, 46, 520, [24, 0, 0, 24]); ctx.fillStyle = C.yellow; ctx.fill();
+  ctx.fillStyle = C.bg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.font = '900 64px Inter';
+  ctx.fillText('WORLD', 24, -120); ctx.fillText('RECORDS', 24, -46);
+  ctx.fillStyle = C.yellow; ctx.beginPath(); ctx.moveTo(-36, 40); ctx.lineTo(84, 40); ctx.lineTo(60, 130); ctx.lineTo(-12, 130); ctx.closePath(); ctx.fill();
+  rr(12, 130, 24, 50, 6); ctx.fill(); rr(-30, 176, 108, 26, 8); ctx.fill();
+  ctx.restore();
+}
+/** speech bubble (graphite, ivory text) pointing down-left to the speaker */
+export function bubble(x, y, text, a = 1, size = 70) {
+  if (a <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.scale(eob(clamp(a)), eob(clamp(a)));
+  ctx.font = `900 ${size}px Inter`; const tw = ctx.measureText(text).width;
+  rr(-tw / 2 - 40, -size, tw + 80, size * 2, 40); ctx.fillStyle = '#202026'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-tw / 2, size - 4); ctx.lineTo(-tw / 2 + 60, size - 4); ctx.lineTo(-tw / 2 - 30, size + 60); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = C.bg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 4);
+  ctx.restore();
+}

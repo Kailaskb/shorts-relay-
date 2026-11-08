@@ -2,7 +2,8 @@
 # Apply the High-ROI Life brand overlay to a fresh faceless-shorts Inside Out project.
 #   bash kit/apply.sh <project-dir>
 # Copies the brand palette (graphite / champagne gold / ivory, no green) into src/core/lib.js and appends the
-# reusable components (cup, commentCard, stamp, bolt, brain, adeno, wallScene, liver, moon, latte, dna) to kit.js.
+# reusable components (cup, commentCard, stamp, bolt, brain, adeno, wallScene, liver, moon, latte, dna, volcano...)
+# and the recurring cast (K.kai, K.bit; see kit/CAST.md) to kit.js.
 set -eu
 KIT="$(cd "$(dirname "$0")" && pwd)"; P="${1:?usage: apply.sh <project-dir>}"
 cp "$KIT/lib.js" "$P/src/core/lib.js"
