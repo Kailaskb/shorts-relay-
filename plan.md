@@ -34,7 +34,8 @@ The youtube-growth skill picks the next item from here (top first, unless the da
 - [ ] Money math: what a small daily spend becomes in 10 years. Hook: number first.
 
 ## Done
-- [ ] 2026-11-08 Kai episode 1: what happens if you stay awake 11 days (Randy Gardner replay; cast debut). Upload pending (Zapier throttled).
+- [ ] 2026-11-08 Silhouette 'what if': what if you could pause time for ten seconds (style test, Kai silhouette, 35 s). Built and on the site; YouTube upload throttled by Zapier twice, one-off retry scheduled for 16:17 UTC.
+- [x] 2026-11-08 Kai episode 1: what happens if you stay awake 11 days (Randy Gardner replay; cast debut): https://www.youtube.com/watch?v=DboeSupgDoY
 - [x] 2026-11-08 Wild what-if (viewer-style question): why we can't use a volcano as a dustbin (Inside Out + kit, 47 s): https://www.youtube.com/watch?v=IBIIBQScTqs
 - [x] 2026-11-08 Brain: he stayed awake 72 hours (first-commenter tribute, sleep series, Deep Dive 3D): https://www.youtube.com/watch?v=F3fQoS0m4rE
 - [x] 2026-11-08 Brain: why coffee makes some people tired (viewer reply): https://www.youtube.com/watch?v=7YwO_s4-Kxo
