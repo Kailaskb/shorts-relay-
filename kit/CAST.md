@@ -19,6 +19,8 @@ Code: `kit/kit-extras.js` (added to every project by `kit/apply.sh`). Debut: "Wh
 ## Sets and props added with the cast
 `K.nightRoom()` (the room at night, moon in the window), `K.tv(x, y, s, t)`, `K.meltWall(x, y, w, h, melt, reveal, t)`, `K.recordBook(x, y, s, rot)` (generic, no real logos), `K.bubble(x, y, text, a, size)` (ivory speech bubble, ink text).
 
+Money set (episode 2, "₹100 a day"): `K.snackBag(x, y, s, rot, price, crinkle)`, `K.coin(x, y, s, spin)` (₹ coin), `K.coinJar(x, y, s, fill, label)`, `K.growthChart(x, y, w, h, p, { dips, color, redA, label })` (returns the tip), `K.barPair(x, y, h, a, b, [value, label], [value, label])`, `K.fiftyGrid(x, y, k)` (50 company blocks), `K.caveat(lines, x, y, a)` (small ivory disclaimer card for money episodes).
+
 ## Series formats (pick one per Short; rotate)
 1. **Kai tries it**: "What happens if you [do X]?" Kai does it, Bit counts. Body, brain, science and wild what-ifs.
 2. **Kai vs the numbers**: money and career math. Kai spends or saves, Bit shows the compound result.

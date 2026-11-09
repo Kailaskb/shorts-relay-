@@ -334,13 +334,96 @@ export function recordBook(x, y, s, rot = 0) {
   rr(12, 130, 24, 50, 6); ctx.fill(); rr(-30, 176, 108, 26, 8); ctx.fill();
   ctx.restore();
 }
-/** speech bubble (graphite, ivory text) pointing down-left to the speaker */
+/** speech bubble (ivory, ink text; reads on day and night) pointing down-left to the speaker */
 export function bubble(x, y, text, a = 1, size = 70) {
   if (a <= 0) return;
   ctx.save(); ctx.translate(x, y); ctx.scale(eob(clamp(a)), eob(clamp(a)));
   ctx.font = `900 ${size}px Inter`; const tw = ctx.measureText(text).width;
-  rr(-tw / 2 - 40, -size, tw + 80, size * 2, 40); ctx.fillStyle = '#202026'; ctx.fill();
+  rr(-tw / 2 - 40, -size, tw + 80, size * 2, 40); ctx.fillStyle = C.white; ctx.fill();
   ctx.beginPath(); ctx.moveTo(-tw / 2, size - 4); ctx.lineTo(-tw / 2 + 60, size - 4); ctx.lineTo(-tw / 2 - 30, size + 60); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = C.bg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 4);
+  ctx.fillStyle = C.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 4);
+  ctx.restore();
+}
+
+// ═════════════ MONEY SET (Kai episode 2: ₹100 a day) ═════════════
+/** snack packet with a price tag. price = text on the tag, or null */
+export function snackBag(x, y, s, rot = 0, price = null, crinkle = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  ctx.beginPath(); ctx.moveTo(-90, -130);
+  for (let i = 0; i <= 6; i++) ctx.lineTo(-90 + i * 30, -130 + (i % 2 ? -14 : 0));
+  ctx.lineTo(100, 130); for (let i = 6; i >= 0; i--) ctx.lineTo(-90 + i * 31.6, 130 + (i % 2 ? 14 : 0)); ctx.closePath();
+  ctx.fillStyle = C.red; ctx.fill();
+  rr(-60, -50, 130, 100, 30); ctx.fillStyle = C.yellow; ctx.fill();
+  ctx.fillStyle = C.ink; ctx.font = '900 40px Inter'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('CHIPS', 5, 2);
+  ctx.globalAlpha = 0.25 + 0.1 * crinkle; ctx.fillStyle = C.white; rr(-74, -110, 24, 210, 12); ctx.fill(); ctx.globalAlpha = 1;
+  if (price) {
+    ctx.save(); ctx.translate(70, -120); ctx.rotate(0.25);
+    rr(-20, -40, 150, 80, 16); ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = C.ink; ctx.stroke();
+    circle(0, 0, 9, C.ink); ctx.fillStyle = C.ink; ctx.font = '900 44px Inter'; ctx.fillText(price, 62, 3);
+    ctx.restore();
+  }
+  ctx.restore();
+}
+/** rupee coin (gold, ink ₹) */
+export function coin(x, y, s, spin = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s * Math.max(0.15, Math.abs(Math.cos(spin))), s);
+  circle(0, 0, 46, '#BC9A55'); circle(0, -3, 42, C.yellow);
+  ctx.fillStyle = C.ink; ctx.font = '900 50px Inter'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('₹', 0, 0);
+  ctx.restore();
+}
+/** glass jar of coins. fill 0..1; label under the lid */
+export function coinJar(x, y, s, fill, label = null) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  rr(-150, -200, 300, 400, 60); ctx.fillStyle = '#E6DFCF'; ctx.globalAlpha = 0.85; ctx.fill(); ctx.globalAlpha = 1;
+  ctx.save(); rr(-150, -200, 300, 400, 60); ctx.clip();
+  const top = 200 - fill * 380;
+  ctx.fillStyle = '#BC9A55'; ctx.fillRect(-150, top, 300, 400);
+  for (let i = 0; i < 40; i++) { const cy = top + 20 + (i % 8) * 50, cx = -130 + Math.floor(i / 8) * 65 + (i % 2) * 20; if (cy < 200) ell(cx, cy, 30, 12, C.yellow); }
+  ctx.restore();
+  rr(-150, -200, 300, 400, 60); ctx.lineWidth = 10; ctx.strokeStyle = C.ink; ctx.stroke();
+  rr(-120, -240, 240, 56, 18); ctx.fillStyle = '#26262C'; ctx.fill();
+  ctx.globalAlpha = 0.5; rr(-120, -170, 26, 280, 13); ctx.fillStyle = C.white; ctx.fill(); ctx.globalAlpha = 1;
+  ctx.restore();
+  if (label) pill(label, x, y - 330 * s, 70, C.ink, C.yellow);
+}
+/** a line chart that draws itself. p 0..1 drawn; dips = [[u, depth]] red drops; returns the tip */
+export function growthChart(x, y, w, h, p, { dips = [], color = C.yellow, redA = 0, label = null } = {}) {
+  rr(x - 30, y - h - 40, w + 60, h + 90, 30); ctx.fillStyle = '#202026'; ctx.fill();
+  ctx.strokeStyle = '#3B3B43'; ctx.lineWidth = 4; for (let i = 0; i <= 3; i++) { ctx.beginPath(); ctx.moveTo(x, y - i * h / 3); ctx.lineTo(x + w, y - i * h / 3); ctx.stroke(); }
+  const f = (u) => { let v = Math.pow(u, 1.6) * 0.9 + Math.sin(u * 37) * 0.025 + Math.sin(u * 13) * 0.03;
+    for (const [du, dd] of dips) { const k = u - du; if (k > 0) v -= dd * Math.exp(-k * 14); }
+    return y - clamp(v, 0, 1) * h * 0.92; };
+  const n = Math.floor(160 * p); ctx.beginPath();
+  for (let i = 0; i <= n; i++) { const u = i / 160; i ? ctx.lineTo(x + u * w, f(u)) : ctx.moveTo(x, f(0)); }
+  ctx.strokeStyle = color; ctx.lineWidth = 14; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+  if (redA > 0) for (const [du] of dips) if (du <= p) { const px = x + du * w + 14, py = f(du + 0.02); ctx.globalAlpha = redA; circle(px, py + 10, 22, C.red); ctx.globalAlpha = 1; }
+  if (label) { ctx.fillStyle = '#9A937F'; ctx.font = '900 40px Inter'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(label, x, y - h - 2); }
+  return [x + p * w, f(p)];
+}
+/** two labelled bars. a, b = 0..1 heights; la, lb = [value, label] */
+export function barPair(x, y, h, a, b, la, lb, colA = '#4A4A53', colB = C.yellow) {
+  for (const [i, v, l, c] of [[0, a, la, colA], [1, b, lb, colB]]) {
+    const bx = x + i * 260, bh = h * v;
+    rr(bx, y - bh, 200, bh, [24, 24, 0, 0]); ctx.fillStyle = c; ctx.fill();
+    if (v > 0.05) { ctx.fillStyle = i ? C.ink : C.white; ctx.font = '900 54px Inter'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(l[0], bx + 100, y - bh + 50); }
+    ctx.fillStyle = C.ink; ctx.font = '900 40px Inter'; ctx.textAlign = 'center'; ctx.fillText(l[1], bx + 100, y + 40);
+  }
+}
+/** 50 small company blocks lighting up (k 0..1) */
+export function fiftyGrid(x, y, k, t = 0) {
+  for (let i = 0; i < 50; i++) {
+    const c = i % 10, r = Math.floor(i / 10), on = clamp(k * 60 - i * 1.0), bh = 50 + rnd(i) * 70;
+    const bx = x + c * 80, by = y + r * 140;
+    rr(bx, by - bh * eob(on), 60, bh * eob(on) + 1, 10); ctx.fillStyle = on > 0.5 ? (i % 3 ? C.yellow : '#BC9A55') : '#CFC6B2'; ctx.fill();
+  }
+}
+/** small ivory caveat card (ink text, multi-line) */
+export function caveat(lines, x, y, a = 1) {
+  if (a <= 0) return;
+  ctx.save(); ctx.globalAlpha = a; ctx.font = '900 32px Inter';
+  const w = Math.max(...lines.map((l) => ctx.measureText(l).width)) + 60, h = lines.length * 46 + 30;
+  rr(x - w / 2, y, w, h, 20); ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 4; ctx.strokeStyle = '#CFC6B2'; ctx.stroke();
+  ctx.fillStyle = C.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  lines.forEach((l, i) => ctx.fillText(l, x, y + 38 + i * 46));
   ctx.restore();
 }
