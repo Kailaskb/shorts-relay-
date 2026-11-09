@@ -1,15 +1,18 @@
 slug,date,format,youtube_id,pillar,style,length_s,hook_type,variable_tested,trigger,views,avg_pct_viewed,stayed_to_watch_pct,avg_view_duration_s,ctr_pct,likes,comments,subs_gained,notes
-kai-11-days-awake,2026-11-08,short,DboeSupgDoY,brain-productivity,inside-out,51,what-happens-if,cast debut (Kai and Bit),series,,,,,,,,,Kai episode 1; found live in the uploads playlist 2026-11-08 15:00 UTC; views not yet pulled
-volcano-dustbin,2026-11-08,short,IBIIBQScTqs,wild-what-ifs,inside-out,47,question,pillar (first wild what-if; geology and waste),user-topic-request,0,,,,,0,0,,first Short on pillar 6; engineer view (controlled furnace vs volcano); reviewer-checked health/safety claims; views as of upload
-he-stayed-awake-72-hours,2026-11-08,short,F3fQoS0m4rE,brain-productivity,deep-dive,46,first-commenter-tribute,style (deep-dive instead of inside-out),viewer-comment,2,,,,,1,0,,sleep series part 3; first-commenter tribute; views as of 2026-11-08 10:15 UTC (1 h old)
-why-coffee-makes-some-people-tired,2026-11-08,short,7YwO_s4-Kxo,brain-productivity,inside-out,45,agree-with-commenter,first-post,viewer-comment,98,,,,,1,0,,reply Short; captions used spread timing (about 0.2 s late)
-what-actually-happens-when-you-drink-coffee,2026-11-08,short,qpszRyQCOWI,brain-productivity,,49,what-happens,,plan,291,,,,,7,2,,source of the 'this is false' comment
-what-happens-if-you-stay-awake-48-hours,2026-11-08,short,Gf87E-reVTE,brain-productivity,,41,what-happens-if,,series,641,,,,,14,5,,sleep series part 2
-what-happens-2-seconds-after-you-tap-your-card,2026-11-07,short,yG6MwiRHQB8,money-math,,33,what-happens,,plan,11,,,,,4,0,,only money Short so far
-7-november-2026,2026-11-07,short,dkYKTdClyWY,,,23,,,,14,,,,,5,1,,untitled upload (no description)
-the-oldest-magic-trick-ever-written-down,2026-11-07,short,VtAOwQ5IN_M,off-pillar,,42,story,,plan,11,,,,,4,0,,history; off the channel's pillars
-what-happens-if-you-stay-awake-24-hours,2026-11-07,short,fQWHo7pFrnI,brain-productivity,,45,what-happens-if,,plan,1144,,,,,22,0,,sleep series part 1; best performer so far
-how-the-kurukshetra-war-really-ended,2026-11-07,short,QQmjDbntqj8,off-pillar,,43,story,,plan,337,,,,,10,2,,mythology/history; off the channel's pillars
-pov-a-rabbit-started-vlogging-in-the-forest,2026-11-07,short,jFo3fVNjRXg,off-pillar,,11,,,,12,,,,,4,0,,AI animal vlog; set as made for kids; off-brand (owner decision)
+kai-100-rupees-a-day,2026-11-09,short,,money-math,inside-out+cast,54,character-number-hook,recurring character (Kai episode 2); money pillar with the cast,plan+vidiq,,,,,,,,,Kai vs the numbers; reviewer-checked; on-screen caveat; Zapier upload throttled twice; retry scheduled 03:09 UTC
+pause-time-ten-seconds,2026-11-08,short,7Da0M8Eq_Fs,wild-what-ifs,silhouette,36,what-if,style (silhouette Kai),plan,1,,,,,0,0,,uploaded by the scheduled retry 15:40 UTC
+beaver-emoji-upload,2026-11-08,short,kQ9MnKR6L2g,off-pillar,,29,,,,2,,,,,0,0,,not made by this pipeline (owner upload?)
+kai-11-days-awake,2026-11-08,short,DboeSupgDoY,brain-productivity,inside-out,51,what-happens-if,cast debut (Kai and Bit),series,3,,,,,2,0,,Kai episode 1; 3 views after about 13 h (2026-11-09 02:20 UTC)
+volcano-dustbin,2026-11-08,short,IBIIBQScTqs,wild-what-ifs,inside-out,47,question,pillar (first wild what-if; geology and waste),user-topic-request,8,,,,,2,0,,first Short on pillar 6; engineer view (controlled furnace vs volcano); reviewer-checked health/safety claims; views as of upload
+he-stayed-awake-72-hours,2026-11-08,short,F3fQoS0m4rE,brain-productivity,deep-dive,46,first-commenter-tribute,style (deep-dive instead of inside-out),viewer-comment,6,,,,,2,0,,sleep series part 3; first-commenter tribute; views as of 2026-11-08 10:15 UTC (1 h old)
+why-coffee-makes-some-people-tired,2026-11-08,short,7YwO_s4-Kxo,brain-productivity,inside-out,45,agree-with-commenter,first-post,viewer-comment,414,,,,,7,0,,reply Short; captions used spread timing (about 0.2 s late)
+what-actually-happens-when-you-drink-coffee,2026-11-08,short,qpszRyQCOWI,brain-productivity,,49,what-happens,,plan,526,,,,,11,2,,source of the 'this is false' comment
+what-happens-if-you-stay-awake-48-hours,2026-11-08,short,Gf87E-reVTE,brain-productivity,,41,what-happens-if,,series,1247,,,,,16,5,,sleep series part 2
+what-happens-2-seconds-after-you-tap-your-card,2026-11-07,short,yG6MwiRHQB8,money-math,,33,what-happens,,plan,14,,,,,5,0,,only money Short so far
+7-november-2026,2026-11-07,short,dkYKTdClyWY,,,23,,,,20,,,,,6,2,,untitled upload (no description)
+the-oldest-magic-trick-ever-written-down,2026-11-07,short,VtAOwQ5IN_M,off-pillar,,42,story,,plan,23,,,,,4,0,,history; off the channel's pillars
+what-happens-if-you-stay-awake-24-hours,2026-11-07,short,fQWHo7pFrnI,brain-productivity,,45,what-happens-if,,plan,1172,,,,,21,0,,sleep series part 1; best performer so far
+how-the-kurukshetra-war-really-ended,2026-11-07,short,QQmjDbntqj8,off-pillar,,43,story,,plan,367,,,,,10,2,,mythology/history; off the channel's pillars
+pov-a-rabbit-started-vlogging-in-the-forest,2026-11-07,short,jFo3fVNjRXg,off-pillar,,11,,,,17,,,,,4,0,,AI animal vlog; set as made for kids; off-brand (owner decision)
 your-brain-is-making-you-feel-guilty-about-money,2026-08-27,long,H8xpB9r4kag,money-math,,403,,,,8,8.37,,33,,2,0,0,long-form; analytics to 2026-11-08: 7 views and 3 min watched
 stop-wasting-time-on-ai-tools-you-dont-need,2026-08-27,long,Czd3muguzgs,ai-robots,,436,,,,5,37.38,,162,,2,0,0,long-form; analytics to 2026-11-08: 4 views and 10 min watched

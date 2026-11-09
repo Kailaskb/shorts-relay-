@@ -1,3 +1,4 @@
 date,subscribers,views_28d,shorts_views_90d,watch_hours_365d,est_revenue,source,notes
 2026-11-08,7,2299,2291,0.2,0,zapier youtube data api + analytics report,views summed from per-video counts (the channel total lags); Analytics lags 24-48 h so the Nov 7-8 Shorts' retention is not in yet; watch hours are the long-form videos only
 2026-11-08,7,2574,2574,0.2,0,zapier youtube data api,second snapshot same day after the volcano upload; views summed from per-video counts; channel total lags
+2026-11-09,8,3833,3820,0.2,0,zapier youtube data api,morning run; views summed per video; every Short uploaded since 2026-11-08 09:00 UTC has 1-8 views (Kai ep1 3) while earlier Shorts have 367-1247
